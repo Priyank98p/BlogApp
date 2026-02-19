@@ -54,7 +54,7 @@ export class AuthService {
         try {
             return await this.account.get();
         } catch (error) {
-            console.log("Appwrite Service error:: getUserError:: error", error)
+            console.log("Appwrite Service error:: getCurrentUserError:: error", error)
         }
         return null; // Ensures the app knows no user is logged in
     }
