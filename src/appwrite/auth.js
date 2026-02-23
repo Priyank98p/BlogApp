@@ -7,6 +7,7 @@ export class AuthService {
 
     constructor() {
         // Sets up the connection to your specific Appwrite server and project
+        console.log("My Project ID is: ", config.projectId);
         this.client
             .setEndpoint(config.appWriteURL)
             .setProject(config.projectId);
@@ -24,7 +25,7 @@ export class AuthService {
             const userAccount = await this.account.create(ID.unique(), email, password, name)
             if(userAccount){
                 // Automatically log the user in after successful registration
-                return this.login(email, password)
+                return this.login({email, password})
             } else {
                 return userAccount;
             }

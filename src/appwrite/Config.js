@@ -171,8 +171,8 @@ export class Service {
      * WHY: This method is synchronous (no 'await') because it doesn't make a 
      * network request; it just constructs a valid URL string for the <img> tag.
      */
-    getFilePreview(fileId){
-        return this.bucket.getFilePreview(
+    getFileView(fileId){
+        return this.bucket.getFileView(
             config.bucketId,
             fileId
         )

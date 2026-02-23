@@ -114,16 +114,16 @@ function Home() {
     }
   }, [authStatus])
 
-  // ── Still resolving session on refresh ───────────────────────────────────
+  // Still resolving session on refresh
   if (authLoading) return <PageLoader />
 
-  // ── Not logged in ────────────────────────────────────────────────────────
+  // Not logged in 
   if (!authStatus) return <GuestPage />
 
-  // ── Logged in, no posts ──────────────────────────────────────────────────
+  // Logged in, no posts
   if (posts.length === 0) return <WelcomePage userName={userData?.name} />
 
-  // ── Logged in with posts ─────────────────────────────────────────────────
+  // Logged in with posts 
   return (
     <div className="w-full py-8">
       <Container>

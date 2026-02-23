@@ -2,7 +2,7 @@ import React from 'react';
 function Footer() {
   return (
     // Added bg-gray-900 so white text is visible, and changed to semantic <footer> tag
-    <footer className="bg-black w-full border-t border-gray-800">
+    <footer className="bg-black w-full border-t border-gray-800 ">
       <div className="max-w-5xl mx-auto px-8 py-12">
         {/* Top section */}
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12 mb-10">

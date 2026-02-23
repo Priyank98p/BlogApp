@@ -42,7 +42,7 @@ function App() {
       <div className="w-full block">
         <Headerr />
         {/* OUTLET: This is where React Router swaps out the page components (Home, Login, Post, etc.) */}
-        <main>
+        <main className="min-h-screen flex flex-col justify-between">
           <Outlet />
         </main>
         <Footerr />

@@ -44,11 +44,14 @@ function Header() {
   ]
 
   return (
-    <header className='py-3 '>
+    <header className='py-3'>
       <Container>
-        <nav className='flex'>
+        {/* Changed to flex-col for mobile stacking, md:flex-row for desktop */}
+        <nav className='flex flex-col md:flex-row items-center w-full'>
+          
           {/* LOGO SECTION */}
-          <div className='mr-4'>
+          {/* Added mb-4 to create space between logo and links on mobile */}
+          <div className='mb-4 md:mb-0 md:mr-4'>
             {/* We use <Link> here so clicking the logo acts as a home button */}
             <Link to='/'>
               <Logo width='70px' />
@@ -56,7 +59,8 @@ function Header() {
           </div>
 
           {/* NAVIGATION LINKS SECTION */}
-          <ul className='flex ml-auto'>
+          {/* Removed ml-auto on mobile to center links, added md:ml-auto for desktop */}
+          <ul className='flex flex-wrap justify-center md:justify-end md:ml-auto items-center'>
             {/* Loop through our navItems array */}
             {navItems.map((item) =>
               item.active ? (
