@@ -1,0 +1,38 @@
+<svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Background circle */}
+    <circle cx="200" cy="150" r="130" fill="#f3f4f6" />
+
+    {/* Desk */}
+    <rect x="80" y="210" width="240" height="12" rx="6" fill="#d1d5db" />
+
+    {/* Book open on desk */}
+    <rect x="120" y="170" width="75" height="45" rx="4" fill="#fff" stroke="#e5e7eb" strokeWidth="2" />
+    <rect x="205" y="170" width="75" height="45" rx="4" fill="#fff" stroke="#e5e7eb" strokeWidth="2" />
+    {/* spine */}
+    <rect x="196" y="170" width="8" height="45" rx="2" fill="#9ca3af" />
+    {/* lines on pages */}
+    <line x1="130" y1="185" x2="185" y2="185" stroke="#e5e7eb" strokeWidth="2" strokeLinecap="round" />
+    <line x1="130" y1="193" x2="185" y2="193" stroke="#e5e7eb" strokeWidth="2" strokeLinecap="round" />
+    <line x1="130" y1="201" x2="170" y2="201" stroke="#e5e7eb" strokeWidth="2" strokeLinecap="round" />
+    <line x1="215" y1="185" x2="270" y2="185" stroke="#e5e7eb" strokeWidth="2" strokeLinecap="round" />
+    <line x1="215" y1="193" x2="270" y2="193" stroke="#e5e7eb" strokeWidth="2" strokeLinecap="round" />
+    <line x1="215" y1="201" x2="255" y2="201" stroke="#e5e7eb" strokeWidth="2" strokeLinecap="round" />
+
+    {/* Person sitting */}
+    {/* Body */}
+    <rect x="178" y="120" width="44" height="55" rx="12" fill="#374151" />
+    {/* Head */}
+    <circle cx="200" cy="105" r="20" fill="#fde68a" />
+    {/* Hair */}
+    <path d="M180 100 Q200 82 220 100" fill="#1f2937" />
+    {/* Left arm */}
+    <path d="M178 140 Q145 155 140 178" stroke="#374151" strokeWidth="10" strokeLinecap="round" fill="none" />
+    {/* Right arm */}
+    <path d="M222 140 Q255 155 260 178" stroke="#374151" strokeWidth="10" strokeLinecap="round" fill="none" />
+
+    {/* Floating sparkles */}
+    <circle cx="310" cy="90" r="5" fill="#fbbf24" opacity="0.7" />
+    <circle cx="90" cy="100" r="4" fill="#fbbf24" opacity="0.5" />
+    <circle cx="330" cy="150" r="3" fill="#6b7280" opacity="0.4" />
+    <circle cx="70" cy="160" r="3" fill="#6b7280" opacity="0.4" />
+  </svg>

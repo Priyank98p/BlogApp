@@ -1,10 +1,8 @@
 import React from 'react'
 
-function Logo({ width = '100px' }) {
+function Logo() {
     return (
-        <div>
-            logo
-        </div>
+        <div className='text-Black text-5xl'>BlogSpot.</div>
     )
 }
 

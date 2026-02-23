@@ -1,16 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Logo from '../Logo';
 function Footer() {
   return (
     // Added bg-gray-900 so white text is visible, and changed to semantic <footer> tag
-    <footer className="bg-gray-900 w-full border-t border-gray-800">
+    <footer className="bg-black w-full border-t border-gray-800">
       <div className="max-w-5xl mx-auto px-8 py-12">
         {/* Top section */}
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12 mb-10">
           {/* Brand & Newsletter */}
           <div className="md:col-span-4">
-            <h2 className="text-white text-xl font-semibold mb-2">The Writ</h2>
+            <h2 className="text-white text-xl font-semibold mb-2">BlogSpot</h2>
             <p className="text-sm leading-relaxed text-gray-400 max-w-xs mb-6">
               A space for essays, ideas, and the occasional tangent. Written with care.
             </p>
@@ -85,7 +83,7 @@ function Footer() {
         {/* Divider + bottom bar */}
         <div className="border-t border-gray-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-gray-500">
-            © {new Date().getFullYear()} The Writ. All rights reserved.
+            © {new Date().getFullYear()} BlogSpot. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-xs text-gray-500 hover:text-white transition-colors">

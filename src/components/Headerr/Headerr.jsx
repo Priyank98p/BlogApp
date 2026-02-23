@@ -8,7 +8,7 @@ function Header() {
   // HOOK: Reads the 'status' (true/false) from the 'auth' slice of the Redux store.
   // Whenever the user logs in or out, this component will instantly re-render.
   const authStatus = useSelector((state) => state.auth.status)
-  
+
   // HOOK: Gives us a function to programmatically change pages (routes).
   const navigate = useNavigate()
 
@@ -20,7 +20,7 @@ function Header() {
       name: 'Home',
       slug: "/",
       active: true // Always visible
-    }, 
+    },
     {
       name: "Login",
       slug: "/login",
@@ -44,7 +44,7 @@ function Header() {
   ]
 
   return (
-    <header className='py-3 shadow bg-gray-500'>
+    <header className='py-3 '>
       <Container>
         <nav className='flex'>
           {/* LOGO SECTION */}
@@ -58,24 +58,23 @@ function Header() {
           {/* NAVIGATION LINKS SECTION */}
           <ul className='flex ml-auto'>
             {/* Loop through our navItems array */}
-            {navItems.map((item) => 
-              // CONDITIONAL RENDER: Only render the button if item.active is true
+            {navItems.map((item) =>
               item.active ? (
-                // React requires a unique 'key' when mapping over arrays
                 <li key={item.name}>
                   <button
-                    // When clicked, use the 'navigate' function to go to the item's slug (URL)
                     onClick={() => navigate(item.slug)}
-                    className='inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'
+                    className='text-white inline-block bg-black duration-200 hover:bg-gray-700 rounded-full cursor-pointer 
+                     mx-1 px-3 py-1.5 text-xs        
+                     sm:text-sm                      
+                     md:mx-2 md:px-6 md:py-2 md:text-base'
                   >
                     {item.name}
                   </button>
                 </li>
-              ) : null // If item.active is false, render absolutely nothing
+              ) : null
             )}
 
             {/* LOGOUT BUTTON SECTION */}
-            {/* If authStatus is true, evaluate and render the code inside the parentheses */}
             {authStatus && (
               <li>
                 <LogoutBtn />
