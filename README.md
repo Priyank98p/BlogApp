@@ -143,13 +143,13 @@ On every page refresh, `App.jsx` calls `getCurrentUser()` to check if a session 
 
 ## Common Issues
 
-**Images not showing** , Check your Appwrite bucket permissions. Add `Any: Read` under the bucket settings.
+**Images not showing** - Check your Appwrite bucket permissions. Add `Any: Read` under the bucket settings.
 
-**Posts not loading** , Check your table permissions. Add `Any: Read` and `Users: Read`.
+**Posts not loading** - Check your table permissions. Add `Any: Read` and `Users: Read`.
 
-**`buckets/undefined` error** , Your `VITE_BUCKET_ID` in `.env` is missing or has quotes around it. Remove the quotes and restart the dev server.
+**`buckets/undefined` error** - Your `VITE_BUCKET_ID` in `.env` is missing or has quotes around it. Remove the quotes and restart the dev server.
 
-**Username disappears on refresh** , Make sure your `authSlice.js` has a `loading: true` initial state and your `App.jsx` dispatches `login` or `logout` after `getCurrentUser()` resolves.
+**Username disappears on refresh** - Make sure your `authSlice.js` has a `loading: true` initial state and your `App.jsx` dispatches `login` or `logout` after `getCurrentUser()` resolves.
 
 ---
 
@@ -165,4 +165,4 @@ npm run preview   # Preview the production build locally
 
 ## License
 
-MIT , feel free to use this as a starting point for your own projects.
+MIT - feel free to use this as a starting point for your own projects.
