@@ -6,25 +6,24 @@ export class AuthService {
     account;
 
     constructor() {
-        // Sets up the connection to your specific Appwrite server and project
-        console.log("My Project ID is: ", config.projectId);
+        // Configures the SDK with your server URL and Project ID from your config file
         this.client
             .setEndpoint(config.appWriteURL)
             .setProject(config.projectId);
         
-        // Initializes the Account SDK using the configured client
+        // Connects the 'Account' service to the configured client
         this.account = new Account(this.client);
     }
 
     /**
-     * Creates a new user and immediately logs them in if successful.
+     * Registers a new user and chains a login if successful.
      */
     async createAccount({ email, password, name }){
         try{
-            // ID.unique() generates a random unique string for the user ID
+            // ID.unique() lets Appwrite generate a random ID for the new user
             const userAccount = await this.account.create(ID.unique(), email, password, name)
             if(userAccount){
-                // Automatically log the user in after successful registration
+                // If account creation works, we automatically log them in
                 return this.login({email, password})
             } else {
                 return userAccount;
@@ -36,36 +35,37 @@ export class AuthService {
     }
 
     /**
-     * Authenticates a user using their email and password.
+     * Authenticates a user and creates a session cookie.
      */
     async login({email, password}){
         try {
-            // Creates a new session for the user
-           return await this.account.createEmailPasswordSession(email, password)
+            // Exchanges credentials for an active session (logs the user in)
+            return await this.account.createEmailPasswordSession(email, password)
         } catch (error) {
             console.log("Appwrite Service:: login::error", error)
         }
     }
 
     /**
-     * Retrieves the currently logged-in user's data.
-     * Returns null if no active session is found.
+     * Checks if a session exists and returns the user's data.
      */
     async getCurrentUser(){
         try {
+            // Fetches the profile of the currently logged-in user
             return await this.account.get();
         } catch (error) {
+            // Usually fails if the user is not logged in; we return null quietly
             console.log("Appwrite Service error:: getCurrentUserError:: error", error)
         }
-        return null; // Ensures the app knows no user is logged in
+        return null; 
     }
 
     /**
-     * Logs the user out by deleting all active sessions.
+     * Destroys the user session.
      */
     async logout(){
         try {
-            // deleteSessions (plural) clears the session from all devices
+            // deleteSessions (plural) logs the user out of ALL devices/browsers
             await this.account.deleteSessions()
         } catch (error) {
             console.log("Appwrite service:: logout::error", error)
@@ -73,7 +73,6 @@ export class AuthService {
     }
 }
 
-// Create an instance so we can use dot notation: authService.login()
+// Exporting an instance (Object) so we don't have to call 'new' in every component
 const authService = new AuthService();
-
 export default authService;
